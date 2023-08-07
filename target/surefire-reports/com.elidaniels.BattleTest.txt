@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.elidaniels.BattleTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.068 s <<< FAILURE! - in com.elidaniels.BattleTest
+testWinner(com.elidaniels.BattleTest)  Time elapsed: 0.06 s  <<< ERROR!
+java.util.NoSuchElementException: No line found
+	at com.elidaniels.BattleTest.testWinner(BattleTest.java:25)
+
