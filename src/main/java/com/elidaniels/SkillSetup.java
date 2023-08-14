@@ -13,6 +13,7 @@ public class SkillSetup {
     Skill skill_3;
     Skill skill_4;
 
+    //object containing all skill data
     JsonNode skillTree;
 
     public SkillSetup() {
@@ -59,6 +60,25 @@ public class SkillSetup {
 
     public String[] getSkillNameArray() {
         return new String[]{skill_1.getName(), skill_2.getName(), skill_3.getName(), skill_4.getName()};
+    }
+
+    public Skill getSkill(String skillName) {
+
+        if (skill_1.getName().equals(skillName)) {
+            return skill_1;
+        }
+        else if (skill_2.getName().equals(skillName)) {
+            return skill_2;
+        }
+        else if (skill_3.getName().equals(skillName)) {
+            return skill_3;
+        }
+        else if (skill_4.getName().equals(skillName)) {
+            return skill_4;
+        }
+        else {
+            throw new IllegalArgumentException();
+        }
     }
 
     public void setSkill(int skillNum, String newSkill) {

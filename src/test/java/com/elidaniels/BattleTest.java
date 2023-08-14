@@ -8,15 +8,15 @@ import java.io.InputStream;
 
 import org.junit.Test;
 
-import com.elidaniels.battleData.Battle;
+import com.elidaniels.battledata.Battle;
 
 public class BattleTest {
     
 
     @Test
-    public void testWinner() throws IOException {
+    public void testWinner() {
 
-        String automatedInput = "ksjenckj\nFIRE\nFIRE\nFIRE\nTHUNDER\n";
+        String automatedInput = "ksjenckj\nFire\nFIRE\nFireball\nFireball\nWaterblade\n";
         InputStream inputStream = new ByteArrayInputStream(automatedInput.getBytes());
         System.setIn(inputStream);
 
@@ -25,9 +25,9 @@ public class BattleTest {
 
         Battle battle = new Battle(testPlayerBlue, testPlayerRed);
 
-        battle.startBattle();
+        Player winner = battle.startBattle();
 
-        assertEquals(testPlayerRed,battle.getWinner()); 
+        assertEquals(testPlayerRed,winner); 
 
     }
 }

@@ -16,7 +16,7 @@ public class Skill {
         this.name = newSkill.get("name").asText();
         this.description = newSkill.get("description").asText();
         this.damage = newSkill.get("damage").asInt();
-        this.critRate = newSkill.get("critRate").asLong();
+        this.critRate = (float) newSkill.get("critRate").asDouble();
 
     }
 

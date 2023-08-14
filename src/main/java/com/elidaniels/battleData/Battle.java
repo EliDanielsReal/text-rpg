@@ -1,4 +1,4 @@
-package com.elidaniels.battleData;
+package com.elidaniels.battledata;
 
 import java.util.Scanner;
 
@@ -6,32 +6,36 @@ import com.elidaniels.Player;
 
 public class Battle {
 
-    Scanner scn = new Scanner(System.in);
-
     Player playerBlue; 
     Player playerRed;
-    Player winner;
+    Scanner scn;
+
 
     public Battle(Player playerBlue, Player playerRed) {
         this.playerBlue = playerBlue;
         this.playerRed = playerRed;
+
+        this.scn = new Scanner(System.in);
+
     }
 
-    public void startBattle() {
+    public Player startBattle() {
 
         boolean battling = true;
 
         Turn turn;
 
+        Player winner;
+
         while (battling) {
 
             System.out.println("Fighting!\n");
 
-            turn = new Turn(playerRed, playerBlue);
+            turn = new Turn(playerRed, playerBlue, scn);
             battling = turn.executeTurn();
 
             if (battling) {
-                turn = new Turn(playerBlue, playerRed);
+                turn = new Turn(playerBlue, playerRed, scn);
                 battling = turn.executeTurn();
             }
 
@@ -41,16 +45,15 @@ public class Battle {
             winner = playerRed;
         }
 
-        else if (playerRed.isDead()) {
+        else {
+
             winner = playerBlue;
         }
 
         System.out.println(winner.getName() + " has won!");
 
+        return winner;
+
     }
 
-    public Player getWinner() {
-        return winner;
-    }
-    
 }

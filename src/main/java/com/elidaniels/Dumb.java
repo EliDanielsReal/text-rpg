@@ -1,21 +1,33 @@
 package com.elidaniels;
 
+import java.util.Scanner;
+
+import com.elidaniels.battledata.Turn;
+
 public class Dumb {
     
     public static void main(String[] args) {
 
-        int x = 100;
+        Player yash = new Player("yash");
+        Player eli = new Player("eli");
+        Scanner scn = new Scanner(System.in);
 
-        float multi = 1.0f;
+        Turn tn = new Turn(yash, eli, scn);
+
+        boolean x = tn.executeTurn();
+
+        // int x = 100;
+
+        // float multi = 1.0f;
 
         
-        for (int i=1; i<=11; i++) {
+        // for (int i=1; i<=11; i++) {
 
-            x = (int) Math.round(x * Math.pow(1.2, 2.5)); 
+        //     x = (int) Math.round(x * Math.pow(1.2, 2.5)); 
     
-                System.out.println("lv" + Integer.toString(i) + ": " + Integer.toString(x));
+        //         System.out.println("lv" + Integer.toString(i) + ": " + Integer.toString(x));
     
-            }
+        //     }
 
         // for (int k=1; k<=9; k++) {
 

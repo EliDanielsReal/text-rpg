@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.elidaniels.LevelTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.004 s <<< FAILURE! - in com.elidaniels.LevelTest
-testLevel(com.elidaniels.LevelTest)  Time elapsed: 0.001 s  <<< FAILURE!
-java.lang.AssertionError: expected:<220> but was:<320>
-	at com.elidaniels.LevelTest.testLevel(LevelTest.java:29)
-

@@ -8,7 +8,7 @@
   {
     "name": "Waterblade",
     "description": "Slices the enemy with a slash of water.",
-    "damage": 20,
+    "damage": 100,
     "critRate": 0.5
   },
   {

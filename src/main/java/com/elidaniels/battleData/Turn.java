@@ -1,10 +1,11 @@
-package com.elidaniels.battleData;
+package com.elidaniels.battledata;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 import com.elidaniels.Player;
+import com.elidaniels.Skill;
 
 public class Turn {
 
@@ -13,11 +14,18 @@ public class Turn {
     private Player currentPlayer;
     private Player enemyPlayer;
 
-    private List<String> validCommands = Arrays.asList("FIRE", "WATER", "EARTH", "AIR", "THUNDER");
+    //converts array to list for improved functionality
+    private List<String> validCommands;
+    
 
-    public Turn(Player currentPlayer, Player enemyPlayer) {
+    public Turn(Player currentPlayer, Player enemyPlayer, Scanner scn) {
+
         this.currentPlayer = currentPlayer;
         this.enemyPlayer = enemyPlayer;
+
+        validCommands =  Arrays.asList(currentPlayer.getSkillSetup().getSkillNameArray());
+
+
     }
     
     public boolean executeTurn() {
@@ -28,9 +36,15 @@ public class Turn {
 
         while (true) {
 
-            System.out.println("Enter a command:\n\tFIRE\n\tWATER\n\tEARTH\n\tAIR\n");
+            System.out.println("ATTACKS:\n" + 
+            validCommands.get(0) + "\n"+
+            validCommands.get(1) + "\n"+
+            validCommands.get(2) + "\n"+
+            validCommands.get(3) + "\n");
 
-            playerInput = scn.nextLine().toUpperCase();
+            playerInput = scn.nextLine();
+
+            System.out.println(playerInput);
 
             if (validCommands.contains(playerInput)) {
 
@@ -55,33 +69,12 @@ public class Turn {
         
     }
 
-    private int calcDamage(String element) {
+    private int calcDamage(String skillName) {
 
-        switch (element) {
-            case "FIRE":
-                
-                return 9;
+        Skill selectedSkill = currentPlayer.getSkillSetup().getSkill(skillName);
 
-            case "WATER":
+        return selectedSkill.getDamage();
 
-                return 9;
-        
-            case "EARTH":
-
-                return 8;
-            
-            case "AIR":
-
-                return 6;
-
-            case "THUNDER":
-                return 100;
-
-            default:
-
-            return -1;
-
-        }
     }
 
 
