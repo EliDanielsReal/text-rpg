@@ -1,6 +1,8 @@
 package com.elidaniels;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -9,36 +11,42 @@ import com.elidaniels.Level;
 public class LevelTest {
 
     @Test
-    public void testLevel() {
+    public void testInitLevel() {
 
-        Level testLv = new Level();
+        Level lvExp0 = new Level(0);
+        assertEquals(1,lvExp0.getLv());
+        assertFalse(lvExp0.isMaxLevel());
+        assertEquals(100, lvExp0.getExpToNextLevel());
 
-        assertEquals(0, testLv.getCurrentExp());
-        assertEquals(1, testLv.getLv());
+        Level lvExp10 = new Level(10);
+        assertEquals(1,lvExp10.getLv());
+        assertEquals(90, lvExp10.getExpToNextLevel());
 
-        testLv.gainExp(testLv.getExpToNextLevel());
+        Level lvExp100 = new Level(100);
+        assertEquals(2,lvExp100.getLv());
+        assertFalse(lvExp100.isMaxLevel());
+        assertEquals(150, lvExp100.getExpToNextLevel());
 
-        assertEquals(100, testLv.getCurrentExp());
+        Level lvExp120 = new Level(120);
+        assertEquals(2,lvExp120.getLv());
 
-        testLv.checkLevelUP();
+        Level lvExp249 = new Level(249);
+        assertEquals(2,lvExp249.getLv());
+        assertEquals(1, lvExp249.getExpToNextLevel());
 
-        assertEquals(2, testLv.getLv());
+        Level lvExp900 = new Level(900);
+        assertEquals(5,lvExp900.getLv());
+        assertFalse(lvExp900.isMaxLevel());
 
-        testLv.gainExp(testLv.getExpToNextLevel());
+        Level lvExp3000 = new Level(3000);
+        assertEquals(10,lvExp3000.getLv());
+        assertTrue(lvExp3000.isMaxLevel());
+        assertEquals(0, lvExp3000.getExpToNextLevel());
 
-        assertEquals(220, testLv.getCurrentExp());
-
-        testLv.checkLevelUP();
-
-        assertEquals(3, testLv.getLv());
-
-        testLv.gainExp(testLv.getExpToNextLevel());
-
-        assertEquals(100, testLv.getCurrentExp());
-
-        testLv.checkLevelUP();
-
-        assertEquals(2, testLv.getLv());
+        Level lvExp4000 = new Level(4000);
+        assertEquals(10,lvExp4000.getLv());
+        assertTrue(lvExp4000.isMaxLevel());
+        assertEquals(0, lvExp4000.getExpToNextLevel());
 
     }
 

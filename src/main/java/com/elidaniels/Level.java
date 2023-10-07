@@ -1,24 +1,61 @@
 package com.elidaniels;
 
 public class Level {
+
+    private int[] levelExpRequirements = new int[]{100, 250, 500, 750, 1000, 1400, 1800, 2200, 3000};
     
     private int currentExp;
-
     private int expToNextLevel;
-
     private int lv;
-    
 
-    public Level() {
-        currentExp = 0;
-        expToNextLevel = 100;
-        lv = 1;
+    private boolean isMax;
+    
+    public Level(int exp) {
+        this.currentExp = exp;
+        calculateLevelStats();
     }
 
-    public boolean checkLevelUP() {
+    private void calculateLevelStats() {
+        lv = 1;
+        isMax = false;
 
-        if (currentExp >= expToNextLevel) {
+        for (int x: levelExpRequirements) {
+            if (currentExp >= x) {
+                lv ++;
+            } else {
+                expToNextLevel = (x-currentExp);
+                break;
+            }
+        }
 
+        if (lv == 10) {
+            currentExp = 3000;
+            expToNextLevel = 0;
+            isMax = true;
+        }
+    }
+
+
+        
+        // public void loadLevelStats(int exp) {
+            
+        //     this.currentExp = exp;
+            
+        //     boolean shouldLevelUp = true;
+            
+        //     while (!shouldLevelUp ) {
+        //         shouldLevelUp = checkLevelUP();
+                
+        //     }
+        // }
+        
+        public boolean checkLevelUP() {
+            
+            if (lv == 10) {
+                return false;
+            }
+            else if (currentExp >= expToNextLevel) {
+                
             lv++;
 
             updateNextLevelExp();
@@ -29,9 +66,19 @@ public class Level {
         return false;
         
     }
-
+    
     private void updateNextLevelExp() {
-        expToNextLevel += (int) Math.round(expToNextLevel *1.2);
+        expToNextLevel = levelExpRequirements[lv-1];
+    }
+    
+    public void gainExp(int exp) {
+        currentExp += exp;
+        if (currentExp > 3000) {
+            currentExp = 3000;
+        }
+    }
+    public boolean isMaxLevel() {
+        return isMax;
     }
 
     public int getCurrentExp() {
@@ -45,11 +92,7 @@ public class Level {
     public int getLv() {
         return lv;
     }
-
-    public void gainExp(int exp) {
-        currentExp += exp;
-    }
-
+    
     @Override
     public String toString() {
         return "currentExp: " + currentExp + "\nexpToNextLevel: " + expToNextLevel + "\nlv: " + lv;
