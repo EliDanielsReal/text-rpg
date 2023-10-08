@@ -5,7 +5,7 @@ import java.io.IOException;
 public class Player {
     
     private String name;
-    private int level;
+    private Level playerLevel;
 
     private int health;
     private int attack;
@@ -15,7 +15,7 @@ public class Player {
     
     public Player(String name) {
         this.name = name;
-        this.level = 1;
+        this.playerLevel = new Level(0);
         this.health = 100;
         this.attack = 10;
         this.skillSetup = new SkillSetup();
@@ -40,12 +40,8 @@ public class Player {
         this.name = name;
     }
     
-    public int getLevel() {
-        return level;
-    }
-    
-    public void setLevel(int level) {
-        this.level = level;
+    public Level getLevel() {
+        return playerLevel;
     }
     
     public int getHealth() {
@@ -67,6 +63,6 @@ public class Player {
     public SkillSetup getSkillSetup() {
         return skillSetup;
     }
-    
+
     
 }
