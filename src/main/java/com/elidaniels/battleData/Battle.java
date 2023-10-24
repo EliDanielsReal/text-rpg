@@ -2,58 +2,50 @@ package com.elidaniels.battledata;
 
 import java.util.Scanner;
 
-import com.elidaniels.Player;
+import com.elidaniels.battledata.turn.Turn;
+import com.elidaniels.fighterdata.Fighter;
+import com.elidaniels.fighterdata.Fighter;
 
 public class Battle {
 
-    Player playerBlue; 
-    Player playerRed;
-    Scanner scn;
+    final Fighter fighterBlue; 
+    final Fighter fighterRed;
+    // Scanner scn;
 
-
-    public Battle(Player playerBlue, Player playerRed) {
-        this.playerBlue = playerBlue;
-        this.playerRed = playerRed;
-
-        this.scn = new Scanner(System.in);
-
+    public Battle(Fighter fighterBlue, Fighter fighterRed) {
+        this.fighterBlue = fighterBlue;
+        this.fighterRed = fighterRed;
+        // this.scn = new Scanner(System.in);
     }
 
-    public Player startBattle() {
-
+    public Fighter startBattle() {
         boolean battling = true;
-
         Turn turn;
-
-        Player winner;
+        Fighter winner;
 
         while (battling) {
 
             System.out.println("Fighting!\n");
 
-            turn = new Turn(playerRed, playerBlue, scn);
-            battling = turn.executeTurn();
 
-            if (battling) {
-                turn = new Turn(playerBlue, playerRed, scn);
-                battling = turn.executeTurn();
-            }
+            // turn = new Turn(fighterRed, fighterBlue);
+            // battling = turn.executeTurn();
+
+            // if (battling) {
+            //     turn = new Turn(fighterBlue, fighterRed);
+            //     battling = turn.executeTurn();
+            // }
 
         }
 
-        if (playerBlue.isDead()) {
-            winner = playerRed;
+        if (fighterBlue.isDead()) {
+            winner = fighterRed;
         }
-
         else {
-
-            winner = playerBlue;
+            winner = fighterBlue;
         }
 
         System.out.println(winner.getName() + " has won!");
-
         return winner;
-
     }
-
 }

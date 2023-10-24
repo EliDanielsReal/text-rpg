@@ -2,6 +2,8 @@ package com.elidaniels;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -58,8 +60,16 @@ public class SkillSetup {
 
     }
 
-    public String[] getSkillNameArray() {
-        return new String[]{skill_1.getName(), skill_2.getName(), skill_3.getName(), skill_4.getName()};
+    public List<String> asSkillNameList() {
+        List<String> skillList = new ArrayList<>();
+        
+        Skill[] skills = {skill_1, skill_2, skill_3, skill_4};
+        
+        for (Skill skill : skills) {
+            skillList.add(skill.getName());
+        }
+    
+        return skillList;
     }
 
     public Skill getSkill(String skillName) {
