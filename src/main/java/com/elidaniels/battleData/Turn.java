@@ -1,0 +1,33 @@
+package com.elidaniels.battledata;
+
+import com.elidaniels.Display;
+import com.elidaniels.fighterdata.Fighter;
+
+public class Turn {
+
+    private Fighter currentFighter;
+    private Fighter oppFighter;
+    
+    public Turn(Fighter currentFighter, Fighter oppFighter) {
+        this.currentFighter = currentFighter;
+        this.oppFighter = oppFighter;
+    }
+    
+    public boolean executeTurn() {
+        Display.displayFighterTurn(currentFighter.getName());
+        Display.displayPlayerBattleStats( currentFighter);
+        String commandInput = currentFighter.getCommandInput();
+
+        int moveDamage = currentFighter.calcDamage(commandInput);
+        Display.displayDamage(currentFighter.getName(), moveDamage);
+
+        oppFighter.takeDamage(moveDamage);
+
+        if (oppFighter.isDead()) {
+            return false;
+        }
+        return true;
+    }
+
+}
+

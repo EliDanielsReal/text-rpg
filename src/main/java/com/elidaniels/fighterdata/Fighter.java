@@ -1,17 +1,22 @@
 package com.elidaniels.fighterdata;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Fighter {
 
     private String name;
     private int health;
     private int attack;
     private FighterType fighterType;
+    protected boolean isPlayer;
     
     public Fighter(String name, int health, int attack, FighterType fighterType) {
         this.name = name;
         this.health = health;
         this.attack = attack;
         this.fighterType = fighterType;
+        this.isPlayer = false;
     }
 
     public boolean isDead() {
@@ -23,6 +28,10 @@ public class Fighter {
         if (this.health < 0) {
             this.health = 0;
         }
+    }
+
+    public int calcDamage(String command) {
+        return attack;
     }
 
     public String getName() {
@@ -48,4 +57,25 @@ public class Fighter {
     public void setAttack(int attack) {
         this.attack = attack;
     }
+
+    public FighterType getFighterType() {
+        return fighterType;
+    }
+
+    public void setFighterType(FighterType fighterType) {
+        this.fighterType = fighterType;
+    }
+
+    // public List<String> getValidCommands() {
+    //     return new ArrayList<>();
+    // }
+
+    public String getCommandInput() {
+        return "stab";
+    }
+
+    public boolean isPlayer() {
+        return isPlayer;
+    }
+    
 }

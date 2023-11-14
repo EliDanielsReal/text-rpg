@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.management.RuntimeErrorException;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -24,7 +26,8 @@ public class SkillSetup {
         this.skill_1 = new Skill(findSkillData("Fireball"));
         this.skill_2 = new Skill(findSkillData("Waterblade"));
         this.skill_3 = new Skill(findSkillData("Airspike"));
-        this.skill_4 = new Skill(findSkillData("Earthwall"));
+        this.skill_4 = new Skill(findSkillData("h"));
+        // this.skill_4 = new Skill(findSkillData("Earthwall"));
 
     }
 
@@ -36,8 +39,7 @@ public class SkillSetup {
             }
         }
 
-        System.out.println("Skill not found");
-        throw new NullPointerException();
+        throw new RuntimeException("Skill Not Found.");
 
     }
 
@@ -50,12 +52,10 @@ public class SkillSetup {
         try {
 
             JsonNode jsonNode = oM.readTree(new File("data/skills.json"));
-            System.out.println("Skills loaded");
             return jsonNode;
             
         } catch (IOException e) {
-            System.out.println("Could not load skills:" + e.getMessage());
-            return oM.createObjectNode();
+            throw new RuntimeException("Could not load skills");
         }
 
     }

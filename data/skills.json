@@ -28,5 +28,11 @@
     "description": "Pierces a bolt of lightning through the enemy.",
     "damage": 20,
     "critRate": 0.9
+  },
+  {
+    "name": "h",
+    "description": "Hax mode on.",
+    "damage": 1000,
+    "critRate": 1
   }
 ]
