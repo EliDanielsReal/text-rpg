@@ -1,4 +1,4 @@
-package com.elidaniels;
+package com.elidaniels.miscdata;
 
 import java.util.List;
 

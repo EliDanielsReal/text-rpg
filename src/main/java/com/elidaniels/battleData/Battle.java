@@ -1,9 +1,7 @@
 package com.elidaniels.battledata;
 
-import java.util.Scanner;
-
-import com.elidaniels.Display;
 import com.elidaniels.fighterdata.Fighter;
+import com.elidaniels.miscdata.Display;
 public class Battle {
 
     final Fighter fighterOne; 
@@ -18,7 +16,6 @@ public class Battle {
         boolean battling = true;
         Turn turn;
         Fighter winner;
-        // final Scanner scn = new Scanner(System.in);
 
         Display.displayStartOfBattle(fighterOne.getName(), fighterTwo.getName());
 

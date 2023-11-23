@@ -3,10 +3,10 @@ package com.elidaniels.fighterdata;
 import java.util.List;
 import java.util.Scanner;
 
-import com.elidaniels.Display;
-import com.elidaniels.Level;
-import com.elidaniels.Skill;
-import com.elidaniels.SkillSetup;
+import com.elidaniels.miscdata.Display;
+import com.elidaniels.miscdata.Level;
+import com.elidaniels.miscdata.Skill;
+import com.elidaniels.miscdata.SkillSetup;
 
 public class Player extends Fighter {
     

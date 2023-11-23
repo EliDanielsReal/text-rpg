@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Fireball",
+    "description": "Launches a ball of fire at the enemy.",
+    "damage": 35,
+    "critRate": 0.2
+  },
+  {
+    "name": "Waterblade",
+    "description": "Slices the enemy with a slash of water.",
+    "damage": 25,
+    "critRate": 0.5
+  },
+  {
+    "name": "Airspike",
+    "description": "Shoots a sharp spike of air at the enemy.",
+    "damage": 40,
+    "critRate": 0
+  },
+  {
+    "name": "Earthwall",
+    "description": "Launches a ball of fire at the enemy.",
+    "damage": 25,
+    "critRate": 0.6
+  },
+  {
+    "name": "Chidori",
+    "description": "Pierces a bolt of lightning through the enemy.",
+    "damage": 20,
+    "critRate": 0.9
+  },
+  {
+    "name": "h",
+    "description": "Hax mode on.",
+    "damage": 1000,
+    "critRate": 1
+  }
+]

@@ -5,20 +5,21 @@ import static org.junit.Assert.assertArrayEquals;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import com.elidaniels.miscdata.SkillSetup;
+
 public class SkillTest {
 
-    @Ignore
+
     @Test
-    public void testCreatedSetup() {
-        // SkillSetup testSS = new SkillSetup(); 
-        // assertArrayEquals(testSS.getSkillNameArray(), new String[]{"Fireball", "Waterblade", "Airspike", "Earthwall"});
+    public void testInitSetup() {
+        SkillSetup testSS = new SkillSetup(); 
+        assertArrayEquals(testSS.asSkillNameList().toArray(), new String[]{"Fireball", "Waterblade", "Airspike", "Earthwall"});
     }
 
-    @Ignore
     @Test
     public void testSetSkill() {
-        // SkillSetup testSS = new SkillSetup(); 
-        // testSS.setSkill(3, "Chidori");
-        // assertArrayEquals(testSS.getSkillNameArray(), new String[]{"Fireball", "Waterblade", "Chidori", "Earthwall"});
+        SkillSetup testSS = new SkillSetup(); 
+        testSS.setSkill(3, "Chidori");
+        assertArrayEquals(testSS.asSkillNameList().toArray(), new String[]{"Fireball", "Waterblade", "Chidori", "Earthwall"});
     }
 }

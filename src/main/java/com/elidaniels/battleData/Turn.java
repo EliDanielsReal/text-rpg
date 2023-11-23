@@ -1,7 +1,7 @@
 package com.elidaniels.battledata;
 
-import com.elidaniels.Display;
 import com.elidaniels.fighterdata.Fighter;
+import com.elidaniels.miscdata.Display;
 
 public class Turn {
 
