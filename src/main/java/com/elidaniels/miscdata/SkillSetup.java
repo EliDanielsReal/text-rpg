@@ -43,8 +43,6 @@ public class SkillSetup {
 
     }
 
-
-
     private JsonNode readSkillData() {
 
         ObjectMapper oM = new ObjectMapper();

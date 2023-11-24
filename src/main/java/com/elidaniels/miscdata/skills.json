@@ -1,38 +1,115 @@
 [
   {
-    "name": "Fireball",
-    "description": "Launches a ball of fire at the enemy.",
-    "damage": 35,
-    "critRate": 0.2
-  },
-  {
-    "name": "Waterblade",
-    "description": "Slices the enemy with a slash of water.",
-    "damage": 25,
-    "critRate": 0.5
-  },
-  {
-    "name": "Airspike",
-    "description": "Shoots a sharp spike of air at the enemy.",
-    "damage": 40,
+    "name": "Poseidon's Wrath",
+    "description": "tbw",
+    "type": "WATER",
+    "damage": 0,
     "critRate": 0
   },
   {
-    "name": "Earthwall",
-    "description": "Launches a ball of fire at the enemy.",
-    "damage": 25,
-    "critRate": 0.6
+    "name": "Sovereign Sea Storm",
+    "description": "tbw",
+    "type": "WATER",
+    "damage": 0,
+    "critRate": 0
   },
   {
-    "name": "Chidori",
-    "description": "Pierces a bolt of lightning through the enemy.",
-    "damage": 20,
-    "critRate": 0.9
+    "name": "Oceanic Overdrive",
+    "description": "tbw",
+    "type": "WATER",
+    "damage": 0,
+    "critRate": 0
   },
   {
-    "name": "h",
-    "description": "Hax mode on.",
-    "damage": 1000,
-    "critRate": 1
+    "name": "Mystic Tsunami",
+    "description": "tbw",
+    "type": "WATER",
+    "damage": 0,
+    "critRate": 0
+  },
+
+  {
+    "name": "Tectonic Annihilation",
+    "description": "tbw",
+    "type": "EARTH",
+    "damage": 0,
+    "critRate": 0
+  },
+  {
+    "name": "Quasar Quake",
+    "description": "tbw",
+    "type": "EARTH",
+    "damage": 0,
+    "critRate": 0
+  },
+  {
+    "name": "Grand Granite Geyser",
+    "description": "tbw",
+    "type": "EARTH",
+    "damage": 0,
+    "critRate": 0
+  },
+  {
+    "name": "Gaia's Erruption",
+    "description": "tbw",
+    "type": "EARTH",
+    "damage": 0,
+    "critRate": 0
+  },
+  {
+    "name": "Meteor Meltdown",
+    "description": "tbw",
+    "type": "FIRE",
+    "damage": 0,
+    "critRate": 0
+  },
+  {
+    "name": "Dragonfire Desolation",
+    "description": "tbw",
+    "type": "FIRE",
+    "damage": 0,
+    "critRate": 0
+  },
+  {
+    "name": "Solar Storm",
+    "description": "tbw",
+    "type": "FIRE",
+    "damage": 0,
+    "critRate": 0
+  },
+  {
+    "name": "Infernal Incineration",
+    "description": "tbw",
+    "type": "FIRE",
+    "damage": 0,
+    "critRate": 0
+  },
+  {
+    "name": "Sylphic Windwalker",
+    "description": "tbw",
+    "type": "WIND",
+    "damage": 0,
+    "critRate": 0
+  },
+  {
+    "name": "Raging Tempest",
+    "description": "tbw",
+    "type": "WIND",
+    "damage": 0,
+    "critRate": 0
+  },
+  {
+    "name": "Skyward Surge",
+    "description": "tbw",
+    "type": "WIND",
+    "damage": 0,
+    "critRate": 0
+  },
+  {
+    "name": "Cyclonic Cascade Crescendo",
+    "description": "tbw",
+    "type": "WIND",
+    "damage": 0,
+    "critRate": 0
   }
 ]

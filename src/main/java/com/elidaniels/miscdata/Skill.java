@@ -6,6 +6,8 @@ public class Skill {
 
     private String name;
     private String description;
+    private String type;
+    
     
     private int damage;
 
@@ -17,22 +19,26 @@ public class Skill {
         this.description = newSkill.get("description").asText();
         this.damage = newSkill.get("damage").asInt();
         this.critRate = (float) newSkill.get("critRate").asDouble();
-
+        this.type = newSkill.get("type").asText();
     }
 
     public String getName() {
         return name;
     }
-
+    
     public String getDescription() {
         return description;
     }
-
+    
     public int getDamage() {
         return damage;
     }
-
+    
     public float getCritRate() {
         return critRate;
+    }
+
+    public String getType() {
+        return type;
     }
 }
