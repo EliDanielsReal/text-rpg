@@ -1,4 +1,6 @@
-package com.elidaniels.miscdata;
+package com.elidaniels.fighterdata.playerdata;
+
+import com.elidaniels.miscdata.Display;
 
 public class Level {
 

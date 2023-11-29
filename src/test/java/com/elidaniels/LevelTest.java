@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import com.elidaniels.miscdata.Level;
+import com.elidaniels.fighterdata.playerdata.Level;
 
 public class LevelTest {
 

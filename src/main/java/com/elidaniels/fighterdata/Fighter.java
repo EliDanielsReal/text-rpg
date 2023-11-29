@@ -1,22 +1,24 @@
 package com.elidaniels.fighterdata;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Fighter {
 
     private String name;
     private int health;
     private int attack;
     private FighterType fighterType;
-    protected boolean isPlayer;
+    private ElementType elementType;
     
-    public Fighter(String name, int health, int attack, FighterType fighterType) {
+    protected boolean isPlayer;
+    protected boolean isDefending;
+    
+    public Fighter(String name, int health, int attack, FighterType fighterType, ElementType elementType) {
         this.name = name;
         this.health = health;
         this.attack = attack;
         this.fighterType = fighterType;
+        this.elementType = elementType;
         this.isPlayer = false;
+        this.isDefending = false;
     }
 
     public boolean isDead() {
@@ -30,8 +32,20 @@ public class Fighter {
         }
     }
 
-    public int calcDamage(String command) {
-        return attack;
+    public String getCommand() {
+        return "hit";
+    }
+
+    public void executeCommand(String command, Fighter oppFighter) {
+        return;
+    }
+
+    public boolean isPlayer() {
+        return isPlayer;
+    }
+
+    public boolean isDefending() {
+        return isDefending;
     }
 
     public String getName() {
@@ -41,7 +55,7 @@ public class Fighter {
     public void setName(String name) {
         this.name = name;
     }
-
+    
     public int getHealth() {
         return health;
     }
@@ -57,7 +71,7 @@ public class Fighter {
     public void setAttack(int attack) {
         this.attack = attack;
     }
-
+    
     public FighterType getFighterType() {
         return fighterType;
     }
@@ -66,16 +80,13 @@ public class Fighter {
         this.fighterType = fighterType;
     }
 
-    // public List<String> getValidCommands() {
-    //     return new ArrayList<>();
-    // }
-
-    public String getCommandInput() {
-        return "stab";
+    public ElementType getElementType() {
+        return elementType;
+    }
+    
+    public void setIsDefending(boolean bool) {
+        isDefending = bool;
     }
 
-    public boolean isPlayer() {
-        return isPlayer;
-    }
     
 }

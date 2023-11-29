@@ -1,10 +1,8 @@
 package com.elidaniels;
 
-import java.util.Scanner;
 
-import com.elidaniels.battledata.Turn;
-import com.elidaniels.fighterdata.Enemy;
-import com.elidaniels.fighterdata.Player;
+import com.elidaniels.fighterdata.ElementType;
+import com.elidaniels.fighterdata.playerdata.Player;
 import com.elidaniels.miscdata.Display;
 import com.elidaniels.miscdata.Encounter;
 
@@ -12,7 +10,7 @@ public class Dumb {
     
     public static void main(String[] args) {
 
-        final Player eli = new Player("Eli");
+        final Player eli = new Player("Eli", ElementType.FIRE);
         
 
         while (!eli.isDead()) {

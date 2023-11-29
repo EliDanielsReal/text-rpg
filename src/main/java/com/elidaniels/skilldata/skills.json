@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Standard Smash",
+        "description": "Just your Standard..Smash..",
+        "damage": 11,
+        "critRate": 0
+    },
+    {
+        "name": "Savage Strike",
+        "description": "A ferocious assault, tearing through defenses with raw, unbridled power",
+        "damage": 15,
+        "critRate": 0.5
+    },
+    {
+        "name": "Blitz Barrage",
+        "description": "A relentless storm of blows, making defense nearly impossible.",
+        "damage": 17,
+        "critRate": 0.2
+    },
+    {
+        "name": "Vicious Assault",
+        "description": "An unstoppable force that crushes adversaries beneath its relentless barrage",
+        "damage": 21,
+        "critRate": 0.1
+    },
+    {
+        "name": "Mighty Impact",
+        "description": "A move that transcends the battlefield, embodying the grandeur of a legendary hero. Each strike is a testament to unparalleled strength and unwavering resolve, leaving a trail of awe in its wake.",
+        "damage": 30,
+        "critRate": 0.05
+    }
+]

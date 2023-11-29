@@ -1,10 +1,6 @@
 package com.elidaniels;
 
 import java.io.IOException;
-import java.util.Arrays;
-
-import com.elidaniels.battledata.Battle;
-import com.elidaniels.fighterdata.Player;
 
 public class App 
 {

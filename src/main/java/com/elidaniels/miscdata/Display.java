@@ -1,9 +1,8 @@
 package com.elidaniels.miscdata;
 
-import java.util.List;
-
 import com.elidaniels.fighterdata.Fighter;
-import com.elidaniels.fighterdata.Player;
+import com.elidaniels.fighterdata.playerdata.Level;
+import com.elidaniels.fighterdata.playerdata.Player;
 
 public class Display {
 
@@ -19,17 +18,25 @@ public class Display {
         System.out.println("Player has been revived!");
     }
 
-    public static void displayDamage(String fighterName, int damage) {
+    public static void displayDamage(int damage, String fighterName) {
         System.out.println(fighterName + " dealt " + damage + " damage!");
     }
 
-    public static void displayValidCommands(List<String> validCommands) {
-        System.out.println("ATTACKS:\n\t" + 
-            validCommands.get(0) + "\n\t"+
-            validCommands.get(1) + "\n\t"+
-            validCommands.get(2) + "\n\t"+
-            validCommands.get(3) + "\n");
+    public static void displayBattleCommands() {
+        System.out.println(String.format("%-20s%-20s%n%-20s%-20s%n%-20s%-20s%n%-20s%-20s%n",
+        "1) Attack", "[1]",
+        "2) Defend", "[0]",
+        "3) Heal", "[1]",
+        "4) Ultimate Attack", "[3]"));
+        
     }
+    // public static void displayValidCommands(List<String> validCommands) {
+    //     System.out.println("ATTACKS:\n\t" + 
+    //         validCommands.get(0) + "\n\t"+
+    //         validCommands.get(1) + "\n\t"+
+    //         validCommands.get(2) + "\n\t"+
+    //         validCommands.get(3) + "\n");
+    // }
 
     public static void displayPlayerBattleStats(Fighter player) {
         System.out.println(
@@ -41,11 +48,16 @@ public class Display {
         System.out.println(
             "HP: " + player.getHealth() + "\n"+
             "Level: " + player.getLevel().getLv() +"\n"+
-            "Exp: " + player.getLevel().getCurrentExp()
+            "Exp: " + player.getLevel().getCurrentExp() +"\n"
         );
     }
 
+    public static void displayAttack(String attackName, String currentFighter) {
+        System.out.println(currentFighter + " used " + attackName + ".");
+    }
+
     public static void displayFighterTurn(String currentFighter) {
+        System.out.flush();
         System.out.println("Its " + currentFighter + "'s turn...\n");
     }
 

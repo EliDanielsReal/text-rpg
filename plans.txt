@@ -1,0 +1,29 @@
+battle system:
+WATER > FIRE > WIND > EARTH > WATER
+random select of skills
+
+1 stamina per user turn 
+attack(1) (random), ultimate(3) (choose), heal(1) (random), defend(0) (random)
+
+ultimate:
+2 equiped
+hp requirement?
+maybe 4/5 stamina
+
+heal:
+5% chance heal full
+15% chance heal 50%
+30% chance nothing
+
+block:
+30% chance block
+30% chance get hit
+30% hit for extra damage
+10% reflect
+
+player:
+level up increases HP and attack
+
+items: [increase initial stamina]
+
+*gold

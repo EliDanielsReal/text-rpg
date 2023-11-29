@@ -1,4 +1,4 @@
-package com.elidaniels.miscdata;
+package com.elidaniels.skilldata;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
@@ -6,8 +6,6 @@ public class Skill {
 
     private String name;
     private String description;
-    private String type;
-    
     
     private int damage;
 
@@ -19,7 +17,6 @@ public class Skill {
         this.description = newSkill.get("description").asText();
         this.damage = newSkill.get("damage").asInt();
         this.critRate = (float) newSkill.get("critRate").asDouble();
-        this.type = newSkill.get("type").asText();
     }
 
     public String getName() {
@@ -38,7 +35,4 @@ public class Skill {
         return critRate;
     }
 
-    public String getType() {
-        return type;
-    }
 }

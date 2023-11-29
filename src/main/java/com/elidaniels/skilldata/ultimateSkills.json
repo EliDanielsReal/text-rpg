@@ -3,28 +3,28 @@
     "name": "Poseidon's Wrath",
     "description": "tbw",
     "type": "WATER",
-    "damage": 0,
+    "damage": 100,
     "critRate": 0
   },
   {
     "name": "Sovereign Sea Storm",
     "description": "tbw",
     "type": "WATER",
-    "damage": 0,
+    "damage": 50,
     "critRate": 0
   },
   {
     "name": "Oceanic Overdrive",
     "description": "tbw",
     "type": "WATER",
-    "damage": 0,
+    "damage": 60,
     "critRate": 0
   },
   {
     "name": "Mystic Tsunami",
     "description": "tbw",
     "type": "WATER",
-    "damage": 0,
+    "damage": 70,
     "critRate": 0
   },
 
@@ -32,84 +32,84 @@
     "name": "Tectonic Annihilation",
     "description": "tbw",
     "type": "EARTH",
-    "damage": 0,
+    "damage": 100,
     "critRate": 0
   },
   {
     "name": "Quasar Quake",
     "description": "tbw",
     "type": "EARTH",
-    "damage": 0,
+    "damage": 50,
     "critRate": 0
   },
   {
     "name": "Grand Granite Geyser",
     "description": "tbw",
     "type": "EARTH",
-    "damage": 0,
+    "damage": 60,
     "critRate": 0
   },
   {
     "name": "Gaia's Erruption",
     "description": "tbw",
     "type": "EARTH",
-    "damage": 0,
+    "damage": 70,
     "critRate": 0
   },
   {
     "name": "Meteor Meltdown",
     "description": "tbw",
     "type": "FIRE",
-    "damage": 0,
+    "damage": 50,
     "critRate": 0
   },
   {
     "name": "Dragonfire Desolation",
     "description": "tbw",
     "type": "FIRE",
-    "damage": 0,
+    "damage": 60,
     "critRate": 0
   },
   {
     "name": "Solar Storm",
     "description": "tbw",
     "type": "FIRE",
-    "damage": 0,
+    "damage": 70,
     "critRate": 0
   },
   {
     "name": "Infernal Incineration",
     "description": "tbw",
     "type": "FIRE",
-    "damage": 0,
+    "damage": 100,
     "critRate": 0
   },
   {
     "name": "Sylphic Windwalker",
     "description": "tbw",
     "type": "WIND",
-    "damage": 0,
+    "damage": 100,
     "critRate": 0
   },
   {
     "name": "Raging Tempest",
     "description": "tbw",
     "type": "WIND",
-    "damage": 0,
+    "damage": 70,
     "critRate": 0
   },
   {
     "name": "Skyward Surge",
     "description": "tbw",
     "type": "WIND",
-    "damage": 0,
+    "damage": 50,
     "critRate": 0
   },
   {
-    "name": "Cyclonic Cascade Crescendo",
+    "name": "Cyclonic Cascade",
     "description": "tbw",
     "type": "WIND",
-    "damage": 0,
+    "damage": 60,
     "critRate": 0
   }
 ]
