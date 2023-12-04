@@ -16,7 +16,7 @@ public class Turn {
     public boolean executeTurn() {
         Display.displayFighterTurn(currentFighter.getName());
         Display.displayPlayerBattleStats(currentFighter);
-        String command = currentFighter.getCommand();
+        String command = currentFighter.fetchCommand();
 
         currentFighter.executeCommand(command, oppFighter);
 

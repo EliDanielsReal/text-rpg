@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-
+import com.elidaniels.fighterdata.DefendingState;
 import com.elidaniels.fighterdata.ElementType;
 import com.elidaniels.fighterdata.Fighter;
 import com.elidaniels.fighterdata.FighterType;
@@ -33,10 +33,23 @@ public class Player extends Fighter {
         // this.stamina = 1;
         this.skillSetup = new SkillSetup();
         this.ultimateSkillSetup = new UltimateSkillSetup();
-        this.isPlayer = true;
         this.scn = new Scanner(System.in);
     }
     
+    public void revivePlayer() {
+        setHealth(maxHP);
+        Display.displayRevivePlayer();
+    }
+
+    public int calcDamage(Skill sk) {
+        return sk.getDamage() + getAttack();
+    }
+    
+    public void levelUPStats() {
+        //display 
+        setAttack(getAttack()+7);
+    }
+
     public Level getLevel() {
         return playerLevel;
     }
@@ -48,23 +61,9 @@ public class Player extends Fighter {
     public UltimateSkillSetup getUltimateSkillSetup() {
         return ultimateSkillSetup;
     }
-
-    public void revivePlayer() {
-        setHealth(maxHP);
-        Display.displayRevivePlayer();
-    }
-
-    public int calcDamage(Skill sk) {
-        return sk.getDamage() + getAttack();
-    }
-
-    public void levelUPStats() {
-        //display 
-        setAttack(getAttack()+7);
-    }
-
+    
     @Override
-    public String getCommand() {
+    public String fetchCommand() {
         List<String> validCommands = Arrays.asList("1", "2", "3", "4");
         String input;
 
@@ -107,20 +106,46 @@ public class Player extends Fighter {
         Display.displayAttack(attack.getName(), getName());
         int damage = calcDamage(attack);
         oppFighter.takeDamage(damage);
-        Display.displayDamage(damage, getName());
-
-
     }
 
     private void battle_defend() {
-        setIsDefending(true);
+        Display.displayDefend(getName());
+        Random rand = new Random();
+        int x = rand.nextInt(3);
+        DefendingState[] dStates = DefendingState.values();
+        setDefendingState(dStates[x]);
     }
 
     private void battle_heal() {
-
+        Random rand = new Random();
+        int x = rand.nextInt(100);
+        if (x >= 95) {
+            healFighter(1);
+            Display.displayHealSuccess(getName(), 100);
+        } else if (x >= 80) {
+            healFighter(0.5f);
+            Display.displayHealSuccess(getName(), 50);
+        } else if (x >= 50) {
+            Display.displayHealFail(getName());
+        } else {
+            healFighter(0.3f);
+            Display.displayHealSuccess(getName(), 30);
+        }
     }
 
     private void battle_ultimate_attack(Fighter oppFighter) {
+        List<String> validCommands = Arrays.asList("1", "2");
+        String input;
 
+        while (true) {
+            Display.displayUltimateSelection(getUltimateSkillSetup().asSkillNameList());
+            input = scn.nextLine();
+
+            if (validCommands.contains(input)) {
+                // return input;
+            } else {
+                Display.displayInvalidInput(input);
+            }
+        }
     }
 }

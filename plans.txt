@@ -16,10 +16,9 @@ heal:
 30% chance nothing
 
 block:
-30% chance block
-30% chance get hit
-30% hit for extra damage
-10% reflect
+33% chance block
+33% chance get hit
+33% hit for extra damage
 
 player:
 level up increases HP and attack

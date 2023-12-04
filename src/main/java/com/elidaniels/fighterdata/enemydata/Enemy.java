@@ -42,7 +42,7 @@ public class Enemy extends Fighter{
     }
 
     @Override
-    public String getCommand() {
+    public String fetchCommand() {
         Random rand = new Random();
         int x = rand.nextInt(2) + 1;
         if (x == 1) {
@@ -52,13 +52,14 @@ public class Enemy extends Fighter{
             return "slash";
         }
     }
+    
     @Override
     public void executeCommand(String command, Fighter oppFighter) {
         
         Display.displayAttack(command, getName());
         int damage = calcDamage(command);
         oppFighter.takeDamage(damage);
-        Display.displayDamage(damage, getName());
+        Display.displayDamageTaken(damage, getName());
         
     }
 

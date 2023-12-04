@@ -19,11 +19,7 @@ public class Dumb {
             enc.randomEvent();
 
         }
-
-
         
     }
-
-
 
 }
