@@ -1,25 +1,19 @@
 package com.elidaniels.skilldata;
 
-import com.fasterxml.jackson.databind.JsonNode;
-
 public class UltimateSkill {
 
     private String name;
     private String description;
     private String type;
-    
-    
     private int damage;
-
     private float critRate;
 
-    public UltimateSkill(JsonNode newSkill) {
-
-        this.name = newSkill.get("name").asText();
-        this.description = newSkill.get("description").asText();
-        this.damage = newSkill.get("damage").asInt();
-        this.critRate = (float) newSkill.get("critRate").asDouble();
-        this.type = newSkill.get("type").asText();
+    public UltimateSkill(String name, String description, String type, int damage, float critRate) {
+        this.name = name;
+        this.description = description;
+        this.type = type;
+        this.damage = damage;
+        this.critRate = critRate;
     }
 
     public String getName() {

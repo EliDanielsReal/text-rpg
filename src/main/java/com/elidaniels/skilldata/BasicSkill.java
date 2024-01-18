@@ -1,15 +1,13 @@
 package com.elidaniels.skilldata;
 
-import com.fasterxml.jackson.databind.JsonNode;
-
-public class Skill {
+public class BasicSkill {
 
     private String name;
     private String description;
     private int damage;
     private float critRate;
 
-    public Skill(String name, String description, int damage, float critRate) {
+    public BasicSkill(String name, String description, int damage, float critRate) {
         this.name = name;
         this.description = description;
         this.damage = damage;
