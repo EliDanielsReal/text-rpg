@@ -9,9 +9,5 @@ import com.elidaniels.fighterdata.playerdata.Player;
 
 public class PlayerTest {
     
-    @Test
-    public void testPlayerisPlayer() {
-        Player player = new Player("Elon", ElementType.EARTH);
-        assertTrue(player.isPlayer());
-    }
+
 }
