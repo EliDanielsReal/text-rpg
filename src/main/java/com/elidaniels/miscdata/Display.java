@@ -8,6 +8,21 @@ import com.elidaniels.fighterdata.playerdata.Player;
 
 public class Display {
 
+    String reset = "\u001B[0m";
+    String RED_TEXT = "\u001B[31m";
+    String GREEN_TEXT = "\u001B[32m";
+    String YELLOW_TEXT = "\u001B[33m";
+    String BLUE_TEXT = "\u001B[34m";
+
+    public static void displayChooseName() {
+        System.out.println("Choose a name for your character:");
+    }
+
+    public static void displayChooseElementType() {
+        System.out.println("Choose an element for your character:" 
+        +"\nWATER \nFIRE \nEARTH \nWIND");
+    }
+
     public static void displayStartOfBattle(String fighter1, String fighter2) {
         System.out.println("<< " + fighter1 + " vs " + fighter2 + " >>");
     }
@@ -76,11 +91,11 @@ public class Display {
     }
 
     public static void displayHealSuccess(String currentFighter, int healPercent) {
-        System.out.println(currentFighter + " healed " + healPercent + "%");
+        System.out.println(currentFighter + " drank a potion and healed " + healPercent + "%");
     }
 
     public static void displayHealFail(String currentFighter) {
-        System.out.println(currentFighter + " used a heal spell but it had no effect.");
+        System.out.println(currentFighter + " drank a potion but it had no effect.");
     }
 
     public static void displayFighterTurn(String currentFighter) {
@@ -93,6 +108,6 @@ public class Display {
     }
 
     public static void displayInvalidInput(String invalidString) {
-        System.out.println(invalidString);
+        System.out.println("'" + invalidString + "' " + "is not a valid input.");
     }
 }
