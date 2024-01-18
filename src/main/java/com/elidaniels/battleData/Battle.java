@@ -2,41 +2,52 @@ package com.elidaniels.battledata;
 
 import com.elidaniels.fighterdata.Fighter;
 import com.elidaniels.miscdata.Display;
+
 public class Battle {
 
-    final Fighter fighterOne; 
-    final Fighter fighterTwo;
+    Fighter fighterOne; 
+    Fighter fighterTwo;
+    
+    boolean isBattling = true;
 
     public Battle(Fighter fighterOne, Fighter fighterTwo) {
         this.fighterOne = fighterOne;
         this.fighterTwo = fighterTwo;
     }
-
-    public Fighter startBattle() {
-        boolean battling = true;
+    
+    public void startBattle() {
         Turn turn;
-        Fighter winner;
-
+        
         Display.displayStartOfBattle(fighterOne.getName(), fighterTwo.getName());
-
-        while (battling) {
+        
+        //Main battle loop
+        while (isBattling) {
+            //turn for fighterOne
             turn = new Turn(fighterOne, fighterTwo);
-            battling = turn.executeTurn();
+            isBattling = turn.executeTurn();
 
-            if (battling) {
+            if (isBattling) {
+                //turn for fighterTwo if battle has not ended
                 turn = new Turn(fighterTwo, fighterOne);
-                battling = turn.executeTurn();
+                isBattling = turn.executeTurn();
             }
         }
+    }
+    
+    public Fighter getResult() {
+        Fighter winner;
 
+        //Determine winner
         if (fighterOne.isDead()) {
             winner = fighterTwo;
         }
         else {
             winner = fighterOne;
         }
-
+        
+        //Display result
         Display.displayWinnner(winner.getName());
+        
         return winner;
     }
 }

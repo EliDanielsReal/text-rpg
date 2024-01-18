@@ -14,15 +14,15 @@ public class Turn {
     }
     
     public boolean executeTurn() {
+        //executes turn for current fighter
         Display.displayFighterTurn(currentFighter.getName());
         Display.displayPlayerBattleStats(currentFighter);
+
+        //gets command using each fighter's type of input 
         String command = currentFighter.fetchCommand();
 
+        //performs command requested
         currentFighter.executeCommand(command, oppFighter);
-
-        // int moveDamage = currentFighter.calcDamage(commandInput);
-        // Display.displayDamage(currentFighter.getName(), moveDamage);
-        // oppFighter.takeDamage(moveDamage);
 
         if (oppFighter.isDead()) {
             return false;
