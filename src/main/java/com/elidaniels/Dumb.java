@@ -15,12 +15,14 @@ public class Dumb {
         // IOManager.clearConsole();
         // Display.displayFullPlayerStats(player);
 
-        // while (!player.isDead()) {
-        //     Encounter enc = new Encounter(player);
-        //     Display.displayFullPlayerStats(player);
-        //     enc.randomEvent();
+        final Player player = new Player("Eli", ElementType.FIRE);
 
-        // }
+        while (!player.isDead()) {
+            Encounter enc = new Encounter(player);
+            Display.displayFullPlayerStats(player);
+            enc.randomEvent();
+
+        }
         
     }
 

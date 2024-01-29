@@ -41,8 +41,8 @@ public class Display {
 
     public static void displayUltimateSelection(List<String> ultimateSkills) { 
         System.out.println(String.format("%-20s%-20s%n%-20s%-20s%n%",
-        "1) " +ultimateSkills.get(0)+
-        "2) " + ultimateSkills.get(1)));
+        "1) " +ultimateSkills.get(1)+
+        "2) " + ultimateSkills.get(2)));
 
 
     }

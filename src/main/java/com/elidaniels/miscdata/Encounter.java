@@ -24,7 +24,8 @@ public class Encounter {
         Enemy enemy = EnemyGenerator.generateEnemy(player.getLevel().getLv());
 
         Battle battle = new Battle(player, enemy);
-        Fighter winner = battle.startBattle();
+        battle.startBattle();
+        Fighter winner = battle.getResult();
 
         if (winner.getFighterType().equals(FighterType.PLAYER)) {
             player.getLevel().gainExp(100);
